@@ -1,0 +1,37 @@
+
+<h1 class="col-12 top">Gerenciador de estoque & vendas</h1>
+
+<div class="col-12 login align-items-center p-3">
+    <div class="col-xl-6"></div>
+    <div class=" col-xl-3  col-md-12 col-xs-12  mx-auto" >
+        <mat-card class="login-card">
+            <mat-card-content>
+                <div class="col-12 text-center">
+                    <h3>EasyErp</h3>
+                </div>
+                <mat-form-field  class="w-100 mt-3 "  appearance="outline">
+                    <input matInput  type="email"   [(ngModel)]='user.email'  [ngModelOptions]="{standalone:true}"  id="email" aria-describedby="email" placeholder="Email" required >
+                    <button  mat-button *ngIf="user.email" matSuffix aria-label="Clear" (click)="user.email=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field >
+                <mat-form-field class="w-100"  appearance="outline"> 
+                    <input matInput [type]="text?'text':'password'" [(ngModel)]='user.password'  [ngModelOptions]="{standalone:true}" id="password" placeholder="Password" required>
+                    <button   mat-button *ngIf="user.password" matSuffix aria-label="Clear" (click)="text=!text">
+                        <mat-icon>remove_red_eye</mat-icon>
+                    </button>
+                </mat-form-field>
+                <div class="w-100">
+                    <mat-checkbox [(ngModel)]='user.rememberMe'  [ngModelOptions]="{standalone:true}" color="primary">Remember me</mat-checkbox>
+                </div>
+                <div class="col-md-12 text-white m-2">
+                    <a href="#">Forgot my password</a>
+                </div>
+                <button  type="submit" (click)="singIn(user)" [disabled]="loading" mat-stroked-button color="primary" class=" btn-lg btn-block">
+                    <span *ngIf="!loading">Login</span>
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm sp-login" role="status" aria-hidden="true"></span>
+                </button>
+            </mat-card-content>
+        </mat-card>      
+    </div>
+</div>

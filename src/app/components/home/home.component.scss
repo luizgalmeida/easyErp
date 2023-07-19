@@ -1,0 +1,74 @@
+.home{
+    height: 100vh;
+}
+
+.toolbar{
+    height: 8vh;
+    color: var(--purple);
+
+}
+footer{
+    height: 5vh;
+    background: var(--purple);
+    color: #fff;
+}
+.sidenav-container{
+    
+    height: calc(100% - 13vh);
+}
+
+
+.toolbar{
+    
+    background: var(--purple);
+    
+}
+
+ #snav{
+    text-align: center;
+    background: var(--purple);
+}
+
+.menu-item{
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    font-family: 'Queensides', sans-serif !important;
+    font-size: 1.1rem !important;
+    text-decoration: none  !important;
+    color: #fff !important;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    height: 8vh;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.menu-item:hover{
+    transition: .5s;
+    color: var(--purple) !important;
+    background-color: #fff;
+}
+
+button{
+    color: #fff;
+}
+h3{
+    font-family: 'Queensides', sans-serif;
+    color: #fff;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-shadow: -1px -1px 0 var(--purple), 1px -1px 0 var(--purple), -1px 1px 0 var(--purple), 1px 1px 0 var(--purple);
+}
+
+
+.top-title{
+    font-family: 'Queensides', sans-serif;
+    color:var(--purple);
+    font-size: 4rem;
+    line-height: 4rem;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+.bottom{
+    margin-top: 15vh;
+}

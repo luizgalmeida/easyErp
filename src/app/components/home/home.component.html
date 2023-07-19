@@ -1,0 +1,60 @@
+<div class="home">
+    <mat-toolbar class="toolbar row">
+      <div class="col-1">
+        <button mat-icon-button (click)="snav.toggle()" id="menu"><mat-icon aria-hidden="false">menu</mat-icon></button>
+      </div>
+      <div class="col-9 text-center">
+        <h3 class="top-title">EasyErp</h3>
+      </div>
+      <div class="col-2">
+        <mat-menu #menu="matMenu">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
+          <mat-icon aria-hidden="false">face</mat-icon>
+        </button>
+          <button mat-menu-item (click)="logout();">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Sair</span>
+          </button>   
+        </mat-menu>
+      </div>
+          
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="sidenav-container  col-md-3 col-xs-12">
+      <mat-sidenav #snav id="snav" class="w-100" >
+        <div class="col-9 mt-5 mx-auto">
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Home</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Pedidos</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Produtos</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Clientes</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Faturamento</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Entregas</div>
+        </div>
+
+        <div class="card col-9 mx-auto bottom">
+          <div class="card-body">
+            <h3 class="card-title">EasyErp</h3>
+            <p class="card-text">Gerenciador de estoque & vendas.</p>
+            <!-- <a href="#" class="card-link">Contato</a>
+            <a href="#" class="card-link">Another link</a> -->
+          </div>
+        </div>
+      </mat-sidenav>
+
+   
+
+      <mat-sidenav-content class="home-content  p-0" >
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+
+    
+    </mat-sidenav-container>
+    <footer class="col-12 text-right p-3">
+        Created with ❤ by: Luiz Almeida 
+    </footer>
+
+  </div>
+  
+  
+  
+  

@@ -1,0 +1,43 @@
+.login{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-image: url(../../../assets/1.gif);
+    display: flex;
+    vertical-align: middle;
+}
+img{
+    max-width: 800px;
+    max-height: 200px;
+}
+.login-card{
+    padding: 1vw;
+    border: 1px solid var(--purple);
+    border-radius: 15px;
+}
+
+
+
+h1{
+    font-family: 'Queensides', sans-serif;
+    position: absolute;
+    padding: 8vh;
+    color: var(--purple);
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    font-size: 8.5rem;
+    line-height: 8.5rem;
+}
+
+h3{
+    font-family: 'Queensides', sans-serif;
+    color: #fff;
+    font-size: 5rem;
+    line-height: 5rem;
+    text-shadow: -1px -1px 0 var(--purple), 1px -1px 0 var(--purple), -1px 1px 0 var(--purple), 1px 1px 0 var(--purple);
+}
+
+@media screen and (max-width: 1200px) {
+    h1{
+        display: none;
+    }
+  }
