@@ -3,26 +3,28 @@
       <div class="col-1">
         <button mat-icon-button (click)="snav.toggle()" id="menu"><mat-icon aria-hidden="false">menu</mat-icon></button>
       </div>
-      <div class="col-9 text-center">
+      <div class="col-10 text-center">
         <h3 class="top-title">EasyErp</h3>
       </div>
-      <div class="col-2">
-        <mat-menu #menu="matMenu">
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
-          <mat-icon aria-hidden="false">face</mat-icon>
+      <div class="col-1 text-right">
+        <button mat-mini-fab color="primary">
+          <mat-icon>logout</mat-icon>
         </button>
-          <button mat-menu-item (click)="logout();">
-            <mat-icon>exit_to_app</mat-icon>
-            <span>Sair</span>
-          </button>   
-        </mat-menu>
       </div>
           
     </mat-toolbar>
   
     <mat-sidenav-container class="sidenav-container  col-lg-2 col-md-6 col-xs-12">
       <mat-sidenav #snav id="snav" class="w-100" >
-        <div class="col-9 mt-5 mx-auto">
+        <div class=" col-9  mt-2 mx-auto">
+          
+          <div  class="menu-item-name col-12 p-1 m-1" >
+            
+            <div class="col-12"><mat-icon style="height: 75px; width: 75px; font-size: 75px;">account_circle</mat-icon></div>
+            <div class="col-12">Olá, Nome 😊 </div>
+          </div>
+        </div>
+        <div class="col-9 mt-2 mx-auto">
             <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="/init" (click)="snav.toggle()">Home</div>
             <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Pedidos</div>
             <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Produtos</div>
@@ -39,6 +41,9 @@
             <a href="#" class="card-link">Another link</a> -->
           </div>
         </div>
+        <button mat-fab color="primary" class="mt-2">
+          <mat-icon>logout</mat-icon>
+        </button>
       </mat-sidenav>
 
    

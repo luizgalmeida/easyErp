@@ -29,6 +29,24 @@ footer{
     background: var(--purple);
 }
 
+.menu-item-name{
+    justify-content: center;
+    font-family: 'Queensides', sans-serif !important;
+    font-size: 1.1rem !important;
+    text-decoration: none  !important;
+    color: #fff !important;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.menu-item-name:hover{
+    transition: .5s;
+    color: var(--purple) !important;
+    background-color: #fff;
+}
+
+
 .menu-item{
     display: flex;
     vertical-align: middle;
@@ -39,7 +57,7 @@ footer{
     color: #fff !important;
     border: 3px solid #fff;
     border-radius: 20px;
-    height: 8vh;
+    height: 7vh;
     cursor: pointer;
     transition: .5s;
 }
@@ -70,5 +88,5 @@ h3{
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 .bottom{
-    margin-top: 15vh;
+    margin-top: 4vh;
 }

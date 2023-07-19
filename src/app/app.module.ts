@@ -47,7 +47,7 @@ import { InitComponent } from './components/home/init/init.component';
     MatSidenavModule,
     MatMenuModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
