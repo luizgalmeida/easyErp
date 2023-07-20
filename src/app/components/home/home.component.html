@@ -4,10 +4,10 @@
         <button mat-icon-button (click)="snav.toggle()" id="menu"><mat-icon aria-hidden="false">menu</mat-icon></button>
       </div>
       <div class="col-10 text-center">
-        <h3 class="top-title">EasyErp</h3>
+        <h3 class="top-title"></h3>
       </div>
       <div class="col-1 text-right">
-        <button mat-mini-fab color="primary">
+        <button mat-mini-fab color="primary" (click)="logout()">
           <mat-icon>logout</mat-icon>
         </button>
       </div>
@@ -21,16 +21,16 @@
           <div  class="menu-item-name col-12 p-1 m-1" >
             
             <div class="col-12"><mat-icon style="height: 75px; width: 75px; font-size: 75px;">account_circle</mat-icon></div>
-            <div class="col-12">Olá, Nome 😊 </div>
+            <div class="col-12">Olá, {{firstName}}! 😊 </div>
           </div>
         </div>
         <div class="col-9 mt-2 mx-auto">
             <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="/init" (click)="snav.toggle()">Home</div>
-            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Pedidos</div>
-            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Produtos</div>
-            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Clientes</div>
-            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Faturamento</div>
-            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="" (click)="snav.toggle()">Entregas</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="/init" (click)="snav.toggle()">Pedidos</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="/init" (click)="snav.toggle()">Produtos</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="/init" (click)="snav.toggle()">Clientes</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="/init" (click)="snav.toggle()">Faturamento</div>
+            <div  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="/init" (click)="snav.toggle()">Entregas</div>
         </div>
 
         <div class="card col-9 mx-auto bottom">
@@ -41,7 +41,7 @@
             <a href="#" class="card-link">Another link</a> -->
           </div>
         </div>
-        <button mat-fab color="primary" class="mt-2">
+        <button mat-fab color="primary" class="mt-2" (click)="logout()">
           <mat-icon>logout</mat-icon>
         </button>
       </mat-sidenav>

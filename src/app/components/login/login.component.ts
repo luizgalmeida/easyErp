@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ilogin } from 'src/app/interfaces/ilogin';
-import { LoginService } from 'src/app/services/login.service';
+import { AuthService } from 'src/app/services/auth.service';
 import swal from 'sweetalert';
 
 @Component({
@@ -16,10 +16,16 @@ export class LoginComponent {
     email:''
   }
   text=false
+  currentUser: any
   constructor(
-    private loginService : LoginService,
+    private authService : AuthService,
     private router: Router
-    ) {}
+    ) {
+      this.currentUser = this.authService.getCurrentUser()
+      if(this.currentUser?.userId){
+        this.router.navigate(['/home']);
+      }
+    }
   
     singIn(user: Ilogin) {
       if(user.email == '' || user.password == ''){
@@ -28,12 +34,13 @@ export class LoginComponent {
         })
       }
       else{
-        this.loginService.login(user).subscribe((response: any) => {
+        this.authService.login(user).subscribe((response: any) => {
           if (response?.status!=200){
             swal('Error','User not founded.','error')
           }
           else{
-            
+            delete response.body.password
+            localStorage.setItem('user',JSON.stringify(response.body))
             this.router.navigate(['/home']);
             // swal('WOW','You found the key!', {
             //   className: "black-swal" 
