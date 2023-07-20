@@ -22,6 +22,7 @@ import {MatListModule} from '@angular/material/list';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { InitComponent } from './components/home/init/init.component';
+import { UsersComponent } from './components/home/users/users.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { InitComponent } from './components/home/init/init.component';
     LoginComponent,
     HomeComponent,
     InitComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

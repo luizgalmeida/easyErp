@@ -28,6 +28,9 @@ export default db.define("users", {
   updated: {
     type: Sequelize.DATE
   },
+  partnerId: {
+    type: Sequelize.INTEGER
+  },
   active: {
     type: Sequelize.INTEGER,
     defaultValue: 1
