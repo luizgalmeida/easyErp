@@ -15,7 +15,7 @@
     </mat-toolbar>
   
     <mat-sidenav-container class="sidenav-container  col-12">
-      <mat-sidenav #snav id="snav" class="col-lg-2 col-md-6 col-12 " >
+      <mat-sidenav #snav id="snav" class="col-lg-3 col-md-6 col-12 " >
         <div class=" col-9  mt-2 mx-auto">
           
           <div  class="menu-item-name col-12 p-1 m-1" >
@@ -25,12 +25,12 @@
           </div>
         </div>
         <div class="col-9 mt-2 mx-auto">
-            <a  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Home</a>
-            <a  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Pedidos</a>
-            <a  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Produtos</a>
-            <a  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Clientes</a>
-            <a  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Faturamento</a>
-            <a  class="menu-item col-12 p-1 m-1 align-items-center" routerLink="users" (click)="snav.toggle()">Usuários</a>
+            <a  class="menu-item col-12 p-0 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Home</a>
+            <a  class="menu-item col-12 p-0 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Pedidos</a>
+            <a  class="menu-item col-12 p-0 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Produtos</a>
+            <a  class="menu-item col-12 p-0 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Clientes</a>
+            <a  class="menu-item col-12 p-0 m-1 align-items-center" routerLink="init" (click)="snav.toggle()">Faturamento</a>
+            <a  class="menu-item col-12 p-0 m-1 align-items-center" routerLink="users" (click)="snav.toggle()">Usuários</a>
         </div>
 
         <div class="card col-9 mx-auto bottom">
@@ -41,9 +41,9 @@
             <a href="#" class="card-link">Another link</a> -->
           </div>
         </div>
-        <button mat-fab color="primary" class="mt-2" (click)="logout()">
+        <!-- <button mat-fab color="primary" class="mt-2" (click)="logout()">
           <mat-icon>logout</mat-icon>
-        </button>
+        </button> -->
       </mat-sidenav>
 
    
