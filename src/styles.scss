@@ -57,9 +57,11 @@ body{
    --primary: rgb(148,167,227);
     --pink: #f3a4b5;
     --red: #f5365c;
+    --error: #f5365c;
     --orange: #fb6340;
     --yellow: #ffd600;
     --green: #2dce89;
+    --success: #2dce89;
     --teal: #11cdef;
     --cyan: #2bffc6;
     --magenta: #c83663;
@@ -70,7 +72,6 @@ body{
     --lighter: #e9ecef;
     //--primary: #e14eca;
     --secondary: #f4f5f7;
-    --success: #00f2c3;
     --info: #1d8cf8;
     --warning: #ff8d72;
     --danger: #fd5d93;
@@ -100,6 +101,7 @@ body{
 .filter-bar{
     border: 10px solid #fff;
     border-radius: 10px;
+    width: 90%;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     display: flex;
     vertical-align: middle;
@@ -143,8 +145,8 @@ button{
   .top-title{
     font-family: 'Queensides', sans-serif;
     color:var(--primary);
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 h3{

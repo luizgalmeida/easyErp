@@ -25,7 +25,7 @@ export class UsersComponent implements OnInit, AfterViewInit {
     current_page: 1,
     prev_page_url: null,
     next_page_url: null,
-    total: null,
+    total: 10,
     per_page: null,
     to: null,
     from: null,
@@ -43,9 +43,10 @@ export class UsersComponent implements OnInit, AfterViewInit {
   urlFile = '';
   filterValue = '';
   loadingPage = false
-  lastPage = 0
+  amount = 0
   userList=[]
-  displayedColumns: string[] = ['photo','userId', 'name' ,'email','active'];
+
+  displayedColumns: string[] = ['userId', 'name','active' ,'email','created','actions'];
   filterOptions = {
     value: '',
     per_page: 10,
@@ -98,11 +99,12 @@ export class UsersComponent implements OnInit, AfterViewInit {
       } else {
         this.users.data = response.data.rows;
         this.userList= this.userList.concat(this.users.data)
+        this.amount = this.userList.length
         this.dataSource = new MatTableDataSource<Iuser>(this.userList);
         this.pageIndex = this.users.current_page;
         this.prev_page_url = this.users.prev_page_url;
         this.next_page_url = this.users.next_page_url;
-        this.lastPage = response.data.last_page;
+        this.users.total = response.data.count;
       
       }
     });

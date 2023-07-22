@@ -2,3 +2,15 @@
     margin: 0;
     padding: 0;
 }
+.center{
+
+    display: flex;
+    vertical-align: middle;
+}
+.status{
+    font-weight: bold;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}

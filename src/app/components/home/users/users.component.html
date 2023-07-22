@@ -1,10 +1,10 @@
 <div class="row">
     
-    <div class="col-lg-2 mx-auto align-items-center text-center mt-3 mb-3 top-title">
-        Usuários
-
-    </div>
-    <div class="col-lg-9 mx-auto filter-bar row  align-items-center mt-3 mb-3">
+    <div class="col-lg-12 mx-auto filter-bar row  align-items-center mt-3 mb-3">
+        <div class="col-lg-12 mx-auto  mt-3 mb-3 top-title">
+            Usuários
+    
+        </div>
         <mat-form-field class="col-md-10">
             <input matInput (keyup.enter)="ordenate('filter');" [(ngModel)]="filterValue" placeholder="Buscar pelo nome">
             <button mat-button  *ngIf="filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="filterValue='';ordenate('filter')">
@@ -29,43 +29,60 @@
         </div>
         
     
-    </div>
-    <div class="col-md-12 mx-auto p-2 center div-table">
         <table mat-table [dataSource]="dataSource" matSort matSortActive="userId" matSortDisableClear
             matSortDirection="desc">
 
             <!-- Position Column -->
-            <ng-container matColumnDef="photo" >
-                <th mat-header-cell *matHeaderCellDef class=" text-center"> 
+            
+
+            <ng-container matColumnDef="userId"  >
+                <th mat-header-cell *matHeaderCellDef class="text-center"> ID <mat-icon class="filterBullet" (click)="ordenate('users.userId')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.userId' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon>
                 </th>
                 <td mat-cell *matCellDef="let element" class="text-center" (click)="search(element)">
-                    <mat-icon style="height: 75px; width: 75px; font-size: 75px;" color="primary" *ngIf="!element.photo">account_circle</mat-icon>
-                    <img tyle="height: 75px; width: 75px; font-size: 75px; border-radius:75px" color="primary" *ngIf="element.photo" [src]="element.photo">
+                    <span>{{element.userId}}</span>
                 </td>
             </ng-container>
 
-            <ng-container matColumnDef="userId" >
-                <th mat-header-cell *matHeaderCellDef class="text-center"> ID <mat-icon class="filterBullet" (click)="ordenate('users.userId')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.userId' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon>
-                </th>
-                <td mat-cell *matCellDef="let element" class="text-center" (click)="search(element)"> {{element.userId}} </td>
+            <!-- Name Column -->
+            <ng-container matColumnDef="name"  >
+                <th mat-header-cell *matHeaderCellDef > Nome<mat-icon class="filterBullet" (click)="ordenate('users.name')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.name' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon> </th>
+                <td mat-cell *matCellDef="let element" (click)="search(element)" class="center"> 
+                        <mat-icon style="height: 50px; width: 50px; font-size: 50px;" color="primary" *ngIf="!element.photo">account_circle</mat-icon>
+                        <img tyle="height: 50px; width: 50px; font-size: 50px; border-radius:50px" color="primary" *ngIf="element.photo" [src]="element.photo">
+                        <b class="p-3 ">{{element.name}}</b>
+                </td>
             </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef class=""> Nome<mat-icon class="filterBullet" (click)="ordenate('users.name')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.name' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon> </th>
-                <td mat-cell *matCellDef="let element" (click)="search(element)" class=""> {{element.name}} </td>
+             <!-- Actions Column -->
+             <ng-container matColumnDef="active">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td *matCellDef="let element" > 
+                    <span *ngIf="element.active==1"  class="center"><mat-icon  [style.color]="'var(--success)'">radio_button_checked</mat-icon>  <b class="m-1">Ativo</b></span>
+                    <span *ngIf="element.active==0"  class="center"><mat-icon  [style.color]="'var(--gray)'">radio_button_checked</mat-icon>  <b class="m-1">Inativo</b></span>
+                    
+                </td>
             </ng-container>
 
             <!-- Mali Column -->
             <ng-container matColumnDef="email">
                 <th mat-header-cell *matHeaderCellDef class=""> E-mail <mat-icon class="filterBullet" (click)="ordenate('users.email')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.email' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon></th>
-                <td mat-cell *matCellDef="let element" (click)="search(element)" class=""> {{element.email}} </td>
+                <td mat-cell *matCellDef="let element" (click)="search(element)" class=""> 
+                    <span>{{element.email}}</span>
+                </td>
             </ng-container>
 
             <!-- Parnter Column -->
             <ng-container matColumnDef="partner">
                 <th mat-header-cell *matHeaderCellDef class=""> Empresa <mat-icon class="filterBullet" (click)="ordenate('users.partnerId')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.partnerId' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon></th>
                 <td mat-cell *matCellDef="let element" (click)="search(element)" class=""> {{element.partnerName != undefined ? element.partnerName :"▬"}}</td>
+            </ng-container>
+            
+            <!-- Created Column -->
+            <ng-container matColumnDef="created">
+                <th mat-header-cell *matHeaderCellDef class=""> Criado em <mat-icon class="filterBullet" (click)="ordenate('users.created')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.created' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon></th>
+                <td mat-cell *matCellDef="let element" (click)="search(element)" class=""> 
+                    <span>{{element.created | date: 'dd/MM/YYYY'}}</span>
+                </td>
             </ng-container>
 
             
@@ -75,19 +92,23 @@
                 <td mat-cell *matCellDef="let element" (click)="search(element)" class=""> {{element.typeName}} </td>
             </ng-container> -->
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="active">
-                <th mat-header-cell *matHeaderCellDef [style.width]="'5%'" class="text-center"> Status </th>
-                <td mat-cell *matCellDef="let element" class="text-center"> 
-                    
-                    <mat-slide-toggle [checked]='element.active==1' color="primary" (change)="delete(element)"></mat-slide-toggle>
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef class="text-center "> Ações </th>
+                <td mat-cell *matCellDef="let element" class="text-center "> 
+                    <span [style.background-color]="'var(--primary)'" class="status">Editar</span>
+                    <span [style.background-color]="'var(--error)'" class="status">Excluir</span>
                     
                 </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
         </table>
+        
+        <div class=" text-right"  *ngIf="users.data.length>0">   {{users.data.length}} de  {{users.total}}</div>
     </div>
     <!-- <div class="col-12 mx-auto p-0 center mat-paginator">
         <div class="mat-paginator-outer-container">
@@ -108,15 +129,13 @@
             </div>
         </div>
     </div> -->
-</div>
 
 <div class="col-12 mx-auto text-center mt-5">
-    <button mat-raised-button type="submit" color="primary"  (click)="next()" class="btn-lg p-2 btn-block col-lg-2 col-md-4 col-xs-6 text-white rounded">
-        <span *ngIf="!loadingPage">Ver mais</span>
+    <button mat-raised-button type="submit" color="primary"  [disabled]="amount <= users.total" (click)="next()" class="btn-lg p-2 btn-block col-lg-2 col-md-4 col-xs-6 text-white rounded">
+        <span *ngIf="!loadingPage || amount < users.total">Ver mais</span>
         <span *ngIf="loadingPage" class="spinner-border spinner-border-sm sp-login" role="status" aria-hidden="true"></span>
     </button>
 </div>
-<div class="mat-paginator-range-label "  *ngIf="users.data.length>0">   {{users.to}} de  {{users.total}}</div>
 
 <a [href]="urlFile" target="_blank" download hidden="true" id="fileDownload"></a>
 <div class="position-absolute loading" *ngIf="loading">
