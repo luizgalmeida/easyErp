@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ilogin } from 'src/app/interfaces/ilogin';
@@ -35,18 +36,22 @@ export class LoginComponent {
       }
       else{
         this.authService.login(user).subscribe((response: any) => {
-          if (response?.status!=200){
+          if (response.status!=200){
             swal('Error','User not founded.','error')
           }
           else{
-            delete response.body.password
-            localStorage.setItem('user',JSON.stringify(response.body))
+            delete response.data.password
+            localStorage.setItem('user',JSON.stringify(response.data))
             this.router.navigate(['/home']);
             // swal('WOW','You found the key!', {
             //   className: "black-swal" 
             // })
           }
-        })
+        },
+        (error: HttpErrorResponse) => {
+            // Handle error
+            // Use if conditions to check error code, this depends on your api, how it sends error messages
+        });
       }
       
     }

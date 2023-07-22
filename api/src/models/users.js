@@ -31,6 +31,9 @@ export default db.define("users", {
   partnerId: {
     type: Sequelize.INTEGER
   },
+  image: {
+    type: Sequelize.STRING,
+  },
   active: {
     type: Sequelize.INTEGER,
     defaultValue: 1

@@ -9,9 +9,10 @@ routes.use(cors())
 
 routes.get("/users", users.findAll);
 routes.post("/authenticate", users.authenticate);
-routes.post("/users", users.addUser);
-routes.get("/users/:userId", users.findUser);
-routes.put("/users/:userId", users.updateUser);
-routes.delete("/users/:userId", users.deleteUser);
+routes.post("/user", users.addUser);
+routes.post("/users", users.filter);
+routes.get("/user/:userId", users.findUser);
+routes.put("/user/:userId", users.updateUser);
+routes.delete("/user/:userId", users.deleteUser);
 
 export { routes as default };

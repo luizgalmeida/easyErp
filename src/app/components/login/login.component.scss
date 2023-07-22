@@ -12,7 +12,7 @@ img{
 }
 .login-card{
     padding: 1vw;
-    border: 1px solid var(--purple);
+    border: 1px solid var(--primary);
     border-radius: 15px;
 }
 
@@ -22,7 +22,7 @@ h1{
     font-family: 'Queensides', sans-serif;
     position: absolute;
     padding: 8vh;
-    color: var(--purple);
+    color: var(--primary);
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
     font-size: 12vh;
     line-height: 12vh;
@@ -33,7 +33,7 @@ h3{
     color: #fff;
     font-size: 5rem;
     line-height: 5rem;
-    text-shadow: -1px -1px 0 var(--purple), 1px -1px 0 var(--purple), -1px 1px 0 var(--purple), 1px 1px 0 var(--purple);
+    text-shadow: -1px -1px 0 var(--primary), 1px -1px 0 var(--primary), -1px 1px 0 var(--primary), 1px 1px 0 var(--primary);
 }
 
 @media screen and (max-width: 1200px) {

@@ -18,12 +18,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { MatTableModule } from '@angular/material/table'  
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { InitComponent } from './components/home/init/init.component';
 import { UsersComponent } from './components/home/users/users.component';
-
+import { DialogUsersComponent } from './components/home/users/dialog-users/dialog-users.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { UsersComponent } from './components/home/users/users.component';
     HomeComponent,
     InitComponent,
     UsersComponent,
+    DialogUsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,8 +53,11 @@ import { UsersComponent } from './components/home/users/users.component';
     MatMenuModule,
     MatToolbarModule,
     MatListModule,
+    MatSlideToggleModule,
+    MatTableModule,
+    MatDialogModule
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,DialogUsersComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

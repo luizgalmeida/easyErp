@@ -46,13 +46,15 @@ body{
 .text-right{
     text-align: right
 }
+
+
 @include mat.all-component-themes($angular-default-theme);
 
 
 :root {
     --blue: #5e72e4;
     --indigo: #5603ad;
-    --purple: rgb(148,167,227);
+   --primary: rgb(148,167,227);
     --pink: #f3a4b5;
     --red: #f5365c;
     --orange: #fb6340;
@@ -63,10 +65,10 @@ body{
     --magenta: #c83663;
     --white: #ffffff;
     --gray: #6c757d;
-    --gray-dark: #32325d;
-    --light: #ced4da;
+    --gray-dark: #57575e;
+    --light: #5da5ec;
     --lighter: #e9ecef;
-    --primary: #e14eca;
+    //--primary: #e14eca;
     --secondary: #f4f5f7;
     --success: #00f2c3;
     --info: #1d8cf8;
@@ -88,13 +90,70 @@ body{
   }
 
   a{
-    color: var(--purple);
+    color: var(--primary);
 }
 
 *{
     font-family: 'Poppins', sans-serif;
 }
 
+.filter-bar{
+    border: 10px solid #fff;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center center;
+    
+}
+  
+table{
+    cursor: pointer;
+    width: 100%;
+}
+
+.see-more{
+    border-radius: 100px;
+}
+.see-more span{
+    font-size: large;
+    font-weight: bold;
+    transition: .5s;
+}
+.see-more:hover{
+    transition: .5s;
+    background: #202020;
+}
+button{
+    outline: none;
+}
+
+.div-table{
+    width: 95%;
+    border: 10px solid #fff;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
+  
+  .mat-header-cell{
+    background-color: var(--primary) !important;
+   
+  }
+
+  .top-title{
+    font-family: 'Queensides', sans-serif;
+    color:var(--primary);
+    font-size: 4rem;
+    line-height: 4rem;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+h3{
+    font-family: 'Queensides', sans-serif;
+    color: #fff;
+    font-size: 5rem;
+    line-height: 5rem;
+    text-shadow: -1px -1px 0 var(--primary), 1px -1px 0 var(--primary), -1px 1px 0 var(--primary), 1px 1px 0 var(--primary);
+}
 
 //
 // Rotating border
