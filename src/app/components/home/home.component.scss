@@ -4,17 +4,18 @@
 
 .toolbar{
     height: 10vh;
-    color: var(--purple);
+    color: var(--primary);
 
 }
 footer{
     height: 7vh;
-    background: var(--purple);
+    background: var(--primary);
     color: #fff;
 }
 .sidenav-container{
     
     height: calc(100% - 17vh);
+    width: 100vw;
     background-color: none;
     
 }
@@ -22,13 +23,13 @@ footer{
 
 .toolbar{
     
-    background: var(--purple);
+    background: var(--primary);
     
 }
 
  #snav{
     text-align: center;
-    background: var(--purple);
+    background: var(--primary);
 }
 
 .menu-item-name{
@@ -44,7 +45,7 @@ footer{
 
 .menu-item-name:hover{
     transition: .5s;
-    color: var(--purple) !important;
+    color: var(--primary) !important;
     background-color: #fff;
 }
 
@@ -66,7 +67,7 @@ footer{
 
 .menu-item:hover{
     transition: .5s;
-    color: var(--purple) !important;
+    color: var(--primary) !important;
     background-color: #fff;
 }
 
@@ -78,17 +79,11 @@ h3{
     color: #fff;
     font-size: 3rem;
     line-height: 3rem;
-    text-shadow: -1px -1px 0 var(--purple), 1px -1px 0 var(--purple), -1px 1px 0 var(--purple), 1px 1px 0 var(--purple);
+    text-shadow: -1px -1px 0 var(--primary), 1px -1px 0 var(--primary), -1px 1px 0 var(--primary), 1px 1px 0 var(--primary);
 }
 
 
-.top-title{
-    font-family: 'Queensides', sans-serif;
-    color:var(--purple);
-    font-size: 4rem;
-    line-height: 4rem;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-}
+
 .bottom{
     margin-top: 4vh;
 }
