@@ -26,25 +26,25 @@ export class UserService {
     }
 
     new(data:Iuser) {
-      return this.http.post('user', data);
+      return this.http.post(environment.apiUrl+'user', data);
     }
     
     export(data?: any) {
-      return this.http.post('export/' +(this.currentUser.partnerId ? this.currentUser.partnerId : 0)  ,data);
+      return this.http.post(environment.apiUrl+'export' ,data);
     }
 
     //PUT Request
     update(data:Iuser) {
-      return this.http.put('user/' + data.userId, data);
+      return this.http.put(environment.apiUrl+'user/' + data.userId, data);
     }
     
     updatePassword(data:Iuser) {
-      return this.http.put('user-password/' + data.userId, data);
+      return this.http.put(environment.apiUrl+'user-password/' + data.userId, data);
     }
 
     //DELETE Requests
     delete(userId: number) {
-      return this.http.delete('delete-user/' + userId);
+      return this.http.delete(environment.apiUrl+'user/' + userId);
     }
   }
 

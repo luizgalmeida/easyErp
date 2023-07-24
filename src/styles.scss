@@ -157,6 +157,14 @@ h3{
     text-shadow: -1px -1px 0 var(--primary), 1px -1px 0 var(--primary), -1px 1px 0 var(--primary), 1px 1px 0 var(--primary);
 }
 
+h4{
+    font-family: 'Queensides', sans-serif !important;
+    color: var(--primary);
+    font-size: 2rem !important;
+    line-height: 2rem !important;
+    font-weight: bold !important;
+}
+
 //
 // Rotating border
 //
@@ -233,3 +241,13 @@ h3{
         height: 60px;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .dialog-body{
+        width: 100vw;
+    }
+    #desk-only{
+        width: 0px;
+        display: none;
+    }
+  }

@@ -1,1 +1,46 @@
-<p>dialog-users works!</p>
+<div class="dialog-body p-5">
+    <div class="mb-2 row">
+        <h4 class="col-10">{{ option=='new'?'Novo usuário':'Atualizar usuário'}} </h4>
+        <button mat-icon-button class="col-2 p-0 text-right" [disabled]="loading" (click)="cancel()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+        <form class="mx-auto p-0 m-0  col-12" *ngIf="!loading">
+        <!-- Field Name -->
+        <mat-form-field class="col-12 p-1">
+            <input  matInput [(ngModel)]="user.name" [ngModelOptions]="{standalone:true}" class="form-control" id="name" aria-describedby="name" placeholder="Nome" required>
+        </mat-form-field>
+
+        <!-- Field email -->
+        <mat-form-field  class="col-6 p-1">
+            <input matInput type="email" [(ngModel)]='user.email' [ngModelOptions]="{standalone:true}" class="form-control" id="email" aria-describedby="email" placeholder="E-mail" required>
+        </mat-form-field>
+
+
+        <mat-form-field class="col-6 p-1 p-1" >
+            <mat-select [(ngModel)]='user.access' placeholder="Tipo de acesso" [ngModelOptions]="{standalone: true}" [disabled]="currentUser.access!='ADMIN'">
+                <mat-option value="ADMIN">Administrador</mat-option>
+                <mat-option value="MANAGER">Gestor</mat-option>
+                <mat-option value="BASIC">Básico</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    
+
+        <div class="col-12 text-right">
+
+            <button mat-raised-button type="submit" color="primary" [disabled]="loading" (click)="save(user)" *ngIf="option!='update'">
+                <span *ngIf="!loading" class="text-white">Salvar</span>
+            </button>
+            <button mat-raised-button type="submit" color="primary" [disabled]="loading" (click)="update(user)" *ngIf="option=='update'">
+                <span *ngIf="!loading"  class="text-white">Atualizar</span>
+            </button>
+        </div>
+    </form>
+                
+
+    <div class="col-12 text-center vertical-middle" *ngIf="loading">
+        <span  class="spinner-border spinner-border-sm sp-login" role="status" aria-hidden="true"></span>
+    </div> 
+</div>

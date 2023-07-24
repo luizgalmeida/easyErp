@@ -36,9 +36,9 @@
             
 
             <ng-container matColumnDef="userId"  >
-                <th mat-header-cell *matHeaderCellDef class="text-center"> ID <mat-icon class="filterBullet" (click)="ordenate('users.userId')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.userId' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon>
+                <th mat-header-cell *matHeaderCellDef class="text-center" id="desk-only"> ID <mat-icon class="filterBullet" (click)="ordenate('users.userId')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.userId' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon>
                 </th>
-                <td mat-cell *matCellDef="let element" class="text-center" (click)="search(element)">
+                <td mat-cell *matCellDef="let element" class="text-center" (click)="search(element)" id="desk-only"> 
                     <span>{{element.userId}}</span>
                 </td>
             </ng-container>
@@ -46,17 +46,17 @@
             <!-- Name Column -->
             <ng-container matColumnDef="name"  >
                 <th mat-header-cell *matHeaderCellDef > Nome<mat-icon class="filterBullet" (click)="ordenate('users.name')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.name' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon> </th>
-                <td mat-cell *matCellDef="let element" (click)="search(element)" class="center"> 
-                        <mat-icon style="height: 50px; width: 50px; font-size: 50px;" color="primary" *ngIf="!element.photo">account_circle</mat-icon>
-                        <img tyle="height: 50px; width: 50px; font-size: 50px; border-radius:50px" color="primary" *ngIf="element.photo" [src]="element.photo">
+                <td mat-cell *matCellDef="let element" (click)="search(element)" class="center" > 
+                        <mat-icon style="height: 50px; width: 50px; font-size: 50px;" color="primary" *ngIf="!element.photo" id="desk-only">account_circle</mat-icon>
+                        <img tyle="height: 50px; width: 50px; font-size: 50px; border-radius:50px" color="primary" *ngIf="element.photo" [src]="element.photo" id="desk-only">
                         <b class="p-3 ">{{element.name}}</b>
                 </td>
             </ng-container>
 
              <!-- Actions Column -->
-             <ng-container matColumnDef="active">
-                <th mat-header-cell *matHeaderCellDef> Status </th>
-                <td *matCellDef="let element" > 
+             <ng-container matColumnDef="active" >
+                <th mat-header-cell *matHeaderCellDef id="desk-only"> Status </th>
+                <td *matCellDef="let element" id="desk-only"> 
                     <span *ngIf="element.active==1"  class="center"><mat-icon  [style.color]="'var(--success)'">radio_button_checked</mat-icon>  <b class="m-1">Ativo</b></span>
                     <span *ngIf="element.active==0"  class="center"><mat-icon  [style.color]="'var(--gray)'">radio_button_checked</mat-icon>  <b class="m-1">Inativo</b></span>
                     
@@ -65,22 +65,22 @@
 
             <!-- Mali Column -->
             <ng-container matColumnDef="email">
-                <th mat-header-cell *matHeaderCellDef class=""> E-mail <mat-icon class="filterBullet" (click)="ordenate('users.email')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.email' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon></th>
-                <td mat-cell *matCellDef="let element" (click)="search(element)" class=""> 
+                <th mat-header-cell *matHeaderCellDef class="" id="desk-only"> E-mail <mat-icon class="filterBullet" (click)="ordenate('users.email')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.email' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon></th>
+                <td mat-cell *matCellDef="let element" (click)="search(element)" class="" id="desk-only"> 
                     <span>{{element.email}}</span>
                 </td>
             </ng-container>
 
             <!-- Parnter Column -->
-            <ng-container matColumnDef="partner">
-                <th mat-header-cell *matHeaderCellDef class=""> Empresa <mat-icon class="filterBullet" (click)="ordenate('users.partnerId')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.partnerId' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon></th>
-                <td mat-cell *matCellDef="let element" (click)="search(element)" class=""> {{element.partnerName != undefined ? element.partnerName :"▬"}}</td>
+            <ng-container matColumnDef="partner" >
+                <th mat-header-cell *matHeaderCellDef class="" id="desk-only"> Empresa <mat-icon class="filterBullet" (click)="ordenate('users.partnerId')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.partnerId' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon></th>
+                <td mat-cell *matCellDef="let element" (click)="search(element)" class="" id="desk-only"> {{element.partnerName != undefined ? element.partnerName :"▬"}}</td>
             </ng-container>
             
             <!-- Created Column -->
             <ng-container matColumnDef="created">
-                <th mat-header-cell *matHeaderCellDef class=""> Criado em <mat-icon class="filterBullet" (click)="ordenate('users.created')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.created' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon></th>
-                <td mat-cell *matCellDef="let element" (click)="search(element)" class=""> 
+                <th mat-header-cell *matHeaderCellDef class="" id="desk-only"> Criado em <mat-icon class="filterBullet" (click)="ordenate('users.created')">{{ filterOptions.orderbyoption.type === 'ASC'  && filterOptions.orderbyoption.field === 'users.created' ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon></th>
+                <td mat-cell *matCellDef="let element" (click)="search(element)" class="" id="desk-only"> 
                     <span>{{element.created | date: 'dd/MM/YYYY'}}</span>
                 </td>
             </ng-container>

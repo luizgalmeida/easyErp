@@ -34,6 +34,11 @@ export default db.define("users", {
   image: {
     type: Sequelize.STRING,
   },
+  access: {
+    type: Sequelize.STRING,
+    defaultValue: 'BASIC',
+    allowNull: false,
+  },
   active: {
     type: Sequelize.INTEGER,
     defaultValue: 1

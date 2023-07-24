@@ -26,6 +26,7 @@ import { InitComponent } from './components/home/init/init.component';
 import { UsersComponent } from './components/home/users/users.component';
 import { DialogUsersComponent } from './components/home/users/dialog-users/dialog-users.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     MatSlideToggleModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [HttpClientModule,DialogUsersComponent],
   bootstrap: [AppComponent]

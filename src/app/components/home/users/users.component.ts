@@ -113,7 +113,8 @@ export class UsersComponent implements OnInit, AfterViewInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '600px';
+    dialogConfig.minHeight = '200px';
+    dialogConfig.maxWidth = '100vw';
     dialogConfig.data = { option: 'new' };
     const dialogRef = this.dialog.open(DialogUsersComponent, dialogConfig);
 
@@ -126,7 +127,9 @@ export class UsersComponent implements OnInit, AfterViewInit {
       const dialogConfig = new MatDialogConfig();
       dialogConfig.disableClose = false;
       dialogConfig.autoFocus = true;
-      dialogConfig.width = '600px';
+      dialogConfig.minHeight = '200px';
+      dialogConfig.maxWidth = '100vw';
+
       user.option = 'update';
       dialogConfig.data = user;
       const dialogRef = this.dialog.open(DialogUsersComponent, dialogConfig);
